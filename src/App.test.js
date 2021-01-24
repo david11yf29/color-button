@@ -18,5 +18,4 @@ test('button has correct initial color', () => {
 
   // expect the button text to be change to red
   expect(colorButton.textContent).toBe('Change to red')
-
 });
