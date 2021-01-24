@@ -20,7 +20,3 @@ test('button has correct initial color', () => {
   expect(colorButton.textContent).toBe('Change to red')
 
 });
-
-test('button turns blue when clicked', () => {
-
-});
