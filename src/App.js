@@ -1,32 +1,33 @@
-import { useState } from 'react';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 export const replaceCamelWithSpaces = (colorName) => {
-  return colorName.replace(/\B([A-Z])\B/g, ' $1');
-}
+  return colorName.replace(/\B([A-Z])\B/g, " $1");
+};
 
 function App() {
+  const [buttonColor, setButtonColor] = useState("red");
+  const [disabled, setDisabled] = useState(false);
 
-  const [ buttonColor, setButtonColor ] = useState('red');
-  const [ disabled, setDisabled ] = useState(false);
-
-  const newButtonColor = buttonColor === 'red' ? 'blue' : 'red';
+  const newButtonColor = buttonColor === "red" ? "blue" : "red";
 
   return (
     <div>
-      <button 
-        style={{backgroundColor: buttonColor}}
+      <button
+        style={{ backgroundColor: buttonColor }}
         onClick={() => setButtonColor(newButtonColor)}
         // default button 可按
-        disabled={disabled}> 
+        disabled={disabled}
+      >
         Change to {newButtonColor}
       </button>
-      <input 
-        type='checkbox'
+      <input
+        type="checkbox"
         id="disable-button-checkbox"
         defaultChecked={disabled}
         aria-checked={disabled}
-        onChange={(e) => setDisabled(e.target.checked)} />
+        onChange={(e) => setDisabled(e.target.checked)}
+      />
       <label htmlFor="disable-button-checkbox">Disable button</label>
     </div>
   );
